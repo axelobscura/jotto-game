@@ -8,7 +8,12 @@ const GuessedWords = (props) => {
 };
 
 GuessedWords.PropTypes = {
-
+    guessedWords: PropTypes.arrayOf(
+        PropTypes.shape({
+            guessedWord: PropTypes.string.isRequired,
+            letterMatchCount: PropTypes.number.isRequired
+        })
+    ).isRequired
 }
 
 export default GuessedWords;

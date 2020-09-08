@@ -1,7 +1,20 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { findByTextAttr, checkProps } from '../test/testUtils';
+import { findByTextAttr, checkProps, findByTestAttr, checkProp } from '../test/testUtils';
 import GuessedWords from './GuessedWords';
 
+const defaultProps = {
+    guessedWords: [{
+        guessedWord: 'train',
+        letterMatchCount: 3 
+    }]
+};
 
+const setup = (props = {}) => {
+    const setupProps = {...defaultProps, ...props};
+    return shallow(<GuessedWords {...setupProps} />)
+};
 
+test('does not throw warning with default props', () => {
+    checkProp(GuessedWords, defaultProps);
+})
