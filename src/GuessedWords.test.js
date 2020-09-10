@@ -50,7 +50,7 @@ describe('if there are words guessed', () => {
     });
     test('renders "guessed words section"', () => {
         const guessedWordsNode = findByTestAttr(wrapper, 'guessed-words');
-        expect(guessedWordsNode).toBe(1);
+        expect(guessedWordsNode.length).toBe(1);
     });
     test('correct number of guessed words', () => {
         const guessedWordsNodes = findByTestAttr(wrapper, 'guessed-word');
