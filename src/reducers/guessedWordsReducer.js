@@ -1,3 +1,5 @@
-export default (state, action) => {
+import { actionTypes } from '../actions';
+
+export default (state=[], action) => {
     return null;
 }
