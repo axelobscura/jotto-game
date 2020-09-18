@@ -1,5 +1,10 @@
 import { actionTypes } from '../actions';
 
 export default (state=[], action) => {
-    return null;
+    switch(action.type){
+        case action.type.GUESS_WORD:
+            return [...state, action.payload]
+        default:
+            return state;
+    }
 }
