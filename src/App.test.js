@@ -1,9 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import { shallow } from 'enzyme';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText('JOTTO');
-  expect(linkElement).toBeInTheDocument();
-});
+describe('redux properties', () => {
+  test('has access to success state', () => {
+    const success = true;
+    const wrapper = setup({success});
+    const successProp = wrapper.instance().props.success;
+    expect(successProp).toBe(success);
+  });
+})
