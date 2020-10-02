@@ -30,6 +30,26 @@ describe('redux properties', () => {
     expect(guesseWordsProp).toEqual(guessewords);
   });
   test('getSecretWord action creator is a function on the props', () => {
-    
+    const wrapper = setup();
+    const getSecretWordpProp = wrapper.instance().props.secretWord;
+    expect(getSecretWordpProp).toBeinstanceOf(Function);
   })
+});
+
+test('getsecretword runs on app mount', () => {
+  const getSecretWordMock = jest.fn();
+
+  const props = {
+    getSecretWord: getSecretWordMock,
+    success: false,
+    guesseWords: []
+  }
+
+  const wrapper = shallow(<UnonnectedApp {...props} />);
+
+  wrapper.instance().componentDidMount();
+
+  const getSecretWordCallCount = getSecretWordMock.mock.calls.length;
+
+  expect(getSecretWordCallCount).toBe(1);
 })

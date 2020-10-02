@@ -9,7 +9,7 @@ import { getSecretWord } from './actions';
 
 export class UnonnectedApp extends Component {
   componentDidMount(){
-
+    this.props.getSecretWord();
   }
   render(){
     return (
