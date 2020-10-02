@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { storeFactory } from '../test/testUtils';
-import App from './App';
+import App, { UnonnectedApp } from './App';
 
 const setup = (state = {}) => {
   const store = storeFactory(state);
@@ -29,4 +29,7 @@ describe('redux properties', () => {
     const guesseWordsProp = wrapper.instance().props.guesseWords;
     expect(guesseWordsProp).toEqual(guessewords);
   });
+  test('getSecretWord action creator is a function on the props', () => {
+    
+  })
 })
